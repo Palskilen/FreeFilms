@@ -24,7 +24,7 @@ window.movieData = {
                     "genre": "ODCINEK 2",
                     "duration": "47m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-unikajac-zdjec.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/yubf0nlr08vp"
                 },
                 "Odcinek_3": {
                     "name": "Mądrala",
@@ -32,7 +32,7 @@ window.movieData = {
                     "genre": "ODCINEK 3",
                     "duration": "51m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-madrala.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/3r9lc4lhnhdb"
                 },
                 "Odcinek_4": {
                     "name": "Mów mi Red",
@@ -40,7 +40,7 @@ window.movieData = {
                     "genre": "ODCINEK 4",
                     "duration": "66m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-mow-mi-red.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/actxixhbox3o"
                 },
                 "Odcinek_5": {
                     "name": "Napalony na morderstwo",
@@ -48,7 +48,7 @@ window.movieData = {
                     "genre": "ODCINEK 5",
                     "duration": "49m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-napalony-na-morderstwo.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/3vlqaymcawo4"
                 },
                 "Odcinek_6": {
                     "name": "Koty i mysz",
@@ -56,7 +56,7 @@ window.movieData = {
                     "genre": "ODCINEK 6",
                     "duration": "56m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-napalony-na-morderstwo.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/iiliuosv25dv"
                 },
                 "Odcinek_7": {
                     "name": "Korekta kursu",
@@ -64,7 +64,7 @@ window.movieData = {
                     "genre": "ODCINEK 7",
                     "duration": "53m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-koty-i-mysz.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/2tk1k26hl6cm"
                 },
                 "Odcinek_8": {
                     "name": "Pokój, w którym się zabija",
@@ -72,7 +72,7 @@ window.movieData = {
                     "genre": "ODCINEK 8",
                     "duration": "45m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-pokoj-w-ktorym-sie-zabija.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/nr2ewtu6tnpv"
                 },
                 "Odcinek_9": {
                     "name": "Dotyk Ángela",
@@ -80,7 +80,7 @@ window.movieData = {
                     "genre": "ODCINEK 9",
                     "duration": "47m",
                     "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-touched-by-an-angel.webp",
-                    "URL": ""
+                    "URL": "https://bysesukior.com/e/kho9lbydbp4k"
                 },
                 "Odcinek_10": {
                     "name": "Sprawiedliwość dla wszystkich",
@@ -88,7 +88,7 @@ window.movieData = {
                     "genre": "ODCINEK 10",
                     "duration": "46m",
                     "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zmartwychwstanie-sprawiedliwosc-dla-wszystkich.webp",
-                    "URL": "https://drive.google.com/file/d/1RFpLkXu64YvjA-FeffZR8ENlzGEPOPdF/view?usp=sharing"
+                    "URL": "https://bysesukior.com/e/kpne2yk2hdrx"
                 }
             }
         }
