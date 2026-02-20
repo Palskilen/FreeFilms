@@ -1,6 +1,237 @@
 // movies.js
 window.movieData = {
     "SHOWTIME": {
+        "Dexter" : {
+            "type": "Serial",
+            "name": "Dexter Resurrection",
+            "year": 2025,
+            "genre": "Mroczny thriller",
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter.webp",
+            "Season_1": {
+                "name": "Sezon 1",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter-season-1.webp",
+                "Odcinek_1": {
+                    "name": "Dexter",
+                    "year": 2006,
+                    "genre": "ODCINEK 1",
+                    "duration": "50m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-dexter.webp",
+                    "URL": "https://bysesukior.com/e/wewhpxkxt9qf"
+                },
+                "Odcinek_2": {
+                    "name": "Krokodyl",
+                    "year": 2006,
+                    "genre": "ODCINEK 2",
+                    "duration": "52m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-krokodyl.webp",
+                    "URL": "https://bysesukior.com/e/e6d5pc6tztik"
+                },
+                "Odcinek_3": {
+                    "name": "Dalszy ciąg Cherry",
+                    "year": 2006,
+                    "genre": "ODCINEK 3",
+                    "duration": "48m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-dalszy-ciag-cherry.webp",
+                    "URL": "https://bysesukior.com/e/sllq81i7depq"
+                },
+                "Odcinek_4": {
+                    "name": "Podajmy chłopcu dłoń",
+                    "year": 2006,
+                    "genre": "ODCINEK 4",
+                    "duration": "55m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-podajmy-chlopcu-dlon.webp",
+                    "URL": "https://bysesukior.com/e/dzh8l4ne9ubt"
+                },
+                "Odcinek_5": {
+                    "name": "W amerykańskim stylu",
+                    "year": 2006,
+                    "genre": "ODCINEK 5",
+                    "duration": "53m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-w-amerykanskim-stylu.webp",
+                    "URL": "https://bysesukior.com/e/npcx5m3thjmo"
+                },
+                "Odcinek_6": {
+                    "name": "Zwrot do nadawcy",
+                    "year": 2006,
+                    "genre": "ODCINEK 6",
+                    "duration": "50m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zwrot-do-nadawcy.webp",
+                    "URL": "https://bysesukior.com/e/ekljnybo0bem"
+                },
+                "Odcinek_7": {
+                    "name": "Krąg przyjaciół",
+                    "year": 2006,
+                    "genre": "ODCINEK 7",
+                    "duration": "50m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-krag-przyjaciol.webp",
+                    "URL": "https://bysesukior.com/e/wag5uxs7q5w2"
+                },
+                "Odcinek_8": {
+                    "name": "Terapia",
+                    "year": 2006,
+                    "genre": "ODCINEK 8",
+                    "duration": "51m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-terapia.webp",
+                    "URL": "https://bysesukior.com/e/vnjph6ngl01e"
+                },
+                "Odcinek_9": {
+                    "name": "Ojciec wie lepiej",
+                    "year": 20061,
+                    "genre": "ODCINEK 9",
+                    "duration": "53m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-ojciec-wie-lepiej.webp",
+                    "URL": "https://bysesukior.com/e/4k5x50znu5py"
+                },
+                "Odcinek_10": {
+                    "name": "Zobaczyć czerwień",
+                    "year": 2006,
+                    "genre": "ODCINEK 10",
+                    "duration": "54m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-zobaczyc-czerwien.webp",
+                    "URL": "https://bysesukior.com/e/ljo682xy7hf3"
+                },
+                "Odcinek_11": {
+                    "name": "Prawdę mówiąc",
+                    "year": 2006,
+                    "genre": "ODCINEK 11",
+                    "duration": "51m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-prawde-mowiac.webp",
+                    "URL": "https://bysesukior.com/e/a54f88zn4nkz"
+                },
+                "Odcinek_12": {
+                    "name": "Wolny",
+                    "year": 2006,
+                    "genre": "ODCINEK 12",
+                    "duration": "54m",
+                    "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=480,h=270/dexter-wolny.webp",
+                    "URL": "https://bysesukior.com/e/t27gkxztntqw"
+                },
+            },
+            "Season_2": {
+                "name": "Sezon 2",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter-season-2.webp",
+                "Odcinek_1": {
+                    "name": "Od nowa",
+                    "year": 2006,
+                    "genre": "ODCINEK 1",
+                    "duration": "51m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_2": {
+                    "name": "Czekając na wydech",
+                    "year": 2006,
+                    "genre": "ODCINEK 2",
+                    "duration": "53m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_3": {
+                    "name": "Niewygodne kłamstwo",
+                    "year": 2006,
+                    "genre": "ODCINEK 3",
+                    "duration": "50m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_4": {
+                    "name": "Na wylot",
+                    "year": 2006,
+                    "genre": "ODCINEK 4",
+                    "duration": "50m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_5": {
+                    "name": "Mroczny Obrońca",
+                    "year": 2006,
+                    "genre": "ODCINEK 5",
+                    "duration": "53m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_6": {
+                    "name": "Dex, kłamstwa i kaseta wideo",
+                    "year": 2006,
+                    "genre": "ODCINEK 6",
+                    "duration": "51m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_7": {
+                    "name": "Tej nocy wyrósł las",
+                    "year": 2006,
+                    "genre": "ODCINEK 7",
+                    "duration": "52m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_8": {
+                    "name": "Przebudzenie",
+                    "year": 2006,
+                    "genre": "ODCINEK 8",
+                    "duration": "47m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_9": {
+                    "name": "Daremny opór",
+                    "year": 2006,
+                    "genre": "ODCINEK 9",
+                    "duration": "47m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_10": {
+                    "name": "Tajemnica Harry'ego",
+                    "year": 2006,
+                    "genre": "ODCINEK 10",
+                    "duration": "53m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_11": {
+                    "name": "Przed tobą skręt w lewo",
+                    "year": 2006,
+                    "genre": "ODCINEK 11",
+                    "duration": "51m",
+                    "screen": "",
+                    "URL": ""
+                },
+                "Odcinek_12": {
+                    "name": "Brytyjska inwazja",
+                    "year": 2006,
+                    "genre": "ODCINEK 12",
+                    "duration": "51m",
+                    "screen": "",
+                    "URL": ""
+                }
+            },
+            "Season_3": {
+                "name": "Sezon 3",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter-season-3.webp",
+            },
+            "Season_4": {
+                "name": "Sezon 4",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter-season-4.webp",
+            },
+            "Season_5": {
+                "name": "Sezon 5",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter_season_5_8129f97afd.jpeg",
+            },
+            "Season_6": {
+                "name": "Sezon 6",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter_season_6_2621703724.jpeg",
+            },
+            "Season_7": {
+                "name": "Sezon 7",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter_season_7_433b8d22a6.jpeg",
+            },
+            "Season_8": {
+                "name": "Sezon 8",
+                "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/dexter_season_8_4e524006f8.jpeg",
+            },
+        },
         "Dexter Resurrection": {
             "type": "Serial",
             "name": "Dexter Resurrection",
