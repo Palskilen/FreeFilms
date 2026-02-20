@@ -1,0 +1,170 @@
+body {
+    margin: 0;
+    background: #0a0a0a;
+    font-family: 'Segoe UI', sans-serif;
+    color: white;
+}
+
+.top-panel {
+    height: 90px;
+    background: #000;
+    border-bottom: 1px solid #1a1a1a;
+    display: flex;
+    align-items: center;
+    padding: 0 30px;
+}
+
+.logo {
+    font-size: 32px;
+    font-weight: bold;
+    color: #e50914;
+    margin-left: 10px;
+}
+
+.back-btn {
+    width: 120px;
+    height: 40px;
+    background: #1a1a1a;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+    display: none;
+}
+
+.back-btn:hover {
+    background: #252525;
+    border-color: #e50914;
+}
+
+.section {
+    padding: 20px 60px 10px 60px;
+}
+
+.section h2 {
+    font-size: 26px;
+    border-bottom: 2px solid #e50914;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 280px);
+    gap: 35px;
+}
+
+.card {
+    width: 280px;
+    height: 520px; /* +40px na info */
+    background: #121212;
+    border-radius: 15px;
+    border: 1px solid #222;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    cursor: pointer;
+    transition: 0.2s;
+    position: relative;
+}
+
+.card:hover {
+    background: #181818;
+    border: 1px solid #444;
+}
+
+.poster {
+    flex: 7;
+    background: #1a1a1a;
+    border-radius: 10px;
+    border-bottom: 4px solid #e50914;
+    position: relative; /* 🔥 WAŻNE */
+    overflow: hidden;
+}
+
+.poster img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-title {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 13px;
+    line-height: 1.2;
+}
+
+/* 🔥 PALSKILEN INFO POD NAZWĄ */
+.card-subtitle {
+    margin-top: 4px;
+    font-size: 11px;
+    color: #aaa;
+    line-height: 1.2;
+}
+
+/* 🔥 DURATION GÓRA PRAWY */
+.duration-badge {
+    position: absolute;
+    top: 8px;      /* 🔥 GÓRA */
+    right: 8px;    /* 🔥 PRAWY */
+    background: rgba(229, 9, 20, 0.95);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.card button {
+    margin-top: auto;
+    height: 40px;
+    background: #e50914;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background: #ff0a16;
+}
+
+.player-container {
+    margin: 10px 60px 40px 60px;
+    background: #000;
+    border-radius: 12px;
+    border: 1px solid #444;
+    padding: 30px;
+    min-height: 700px;
+}
+
+.player-title {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: #e50914;
+    margin-bottom: 20px;
+}
+
+.play-btn {
+    height: 60px;
+    background: #e50914;
+    border: none;
+    border-radius: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.play-btn:hover {
+    background: #ff0a16;
+}
