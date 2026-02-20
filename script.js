@@ -1,16 +1,9 @@
-/* 🔥 PALSKILEN CREATOR v3.1 - MIN WIDTH -60% (200px zamiast 320px)! */
+/* 🔥 PALSKILEN CREATOR v3.3 - AUTO-SIZING KART (Palskilen Style!) 🔥 */
+
 const app = document.getElementById("app");
 const backBtn = document.getElementById("backBtn");
 const moviesData = window.movieData;
 let viewStack = [];
-
-// 🔥 🔥 🔥 LIMIT DO ZMIANY - ZMNIEJSZONY O 60%! 🔥 🔥 🔥
-const GRID_CONFIG = {
-    DESKTOP_MIN: 270,      // Było 320px → TERAZ 200px (~6-8 w rzędzie!)
-    TABLET_MIN: 280,       // Było 280px → 180px
-    MOBILE_MIN: 260,       // Było 260px → 160px  
-    MOBILE_SINGLE: 0       // 1 kolumna na telefonie
-};
 
 function pushView(view) {
     viewStack.push(view);
@@ -33,10 +26,74 @@ function render(content) {
     app.appendChild(content);
 }
 
+// 🧠 AUTO-CALCULATE CARD SIZE
+function calculateOptimalCardSize() {
+    const container = document.documentElement; // full viewport
+    const containerWidth = container.clientWidth;
+    
+    // Magiczny algorytm Palskilen - idealny rozmiar karty
+    let baseSize = Math.floor(containerWidth / 8); // cel: ~8 kart
+    baseSize = Math.max(330, Math.min(320, baseSize)); // granice
+    
+    const marginTotal = 10; // 5px z każdej strony x2
+    const gap = 20; // gap między kartami
+    
+    return {
+        width: baseSize,
+        margin: '5px',
+        gap: `${gap}px`,
+        cols: Math.floor((containerWidth - 40) / (baseSize + gap + marginTotal))
+    };
+}
+
+// 🔄 Dynamiczne style na resize
+function updateGridStyles() {
+    const optimal = calculateOptimalCardSize();
+    
+    const style = document.getElementById("palskilen-dynamic-styles");
+    if (style) style.remove();
+    
+    const newStyle = document.createElement("style");
+    newStyle.id = "palskilen-dynamic-styles";
+    newStyle.textContent = `
+        .palskilen-auto-grid {
+            display: grid !important;
+            grid-template-columns: repeat(${optimal.cols}, ${optimal.width}px) !important;
+            gap: ${optimal.gap} !important;
+            width: 100% !important;
+            justify-content: center !important;
+            max-width: calc(100vw - 40px) !important;
+        }
+        .palskilen-auto-card {
+            width: ${optimal.width}px !important;
+            margin: ${optimal.margin} !important;
+            flex-shrink: 0 !important;
+        }
+        @media (max-width: 768px) {
+            .palskilen-auto-grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)) !important;
+            }
+        }
+    `;
+    
+    document.head.appendChild(newStyle);
+    
+    // Update wszystkich istniejących gridów
+    document.querySelectorAll('.palskilen-auto-grid').forEach(grid => {
+        grid.style.gridTemplateColumns = `repeat(${optimal.cols}, ${optimal.width}px)`;
+        grid.style.gap = optimal.gap;
+    });
+}
+
+// 👇 Listener na resize okna
+window.addEventListener('resize', updateGridStyles);
+updateGridStyles(); // initial call
+
 function createCard(title, info, buttonText, callback) {
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "card palskilen-auto-card"; // AUTO CLASS
     card.style.cursor = "pointer";
+    card.style.boxSizing = "border-box";
 
     const poster = document.createElement("div");
     poster.className = "poster";
@@ -91,53 +148,27 @@ function createCard(title, info, buttonText, callback) {
     return card;
 }
 
-// 🔥 RESPONSIVE GRID - ZMNIEJSZONE LIMITY!
-function createResponsiveGrid(items) {
+// 🚀 SMART GRID - SAM LICZY I UKŁADA!
+function createSmartGrid(items) {
     const grid = document.createElement("div");
-    grid.className = "palskilen-grid-v3";
+    grid.className = "palskilen-auto-grid"; // AUTO GRID CLASS
     
-    grid.style.cssText = `
-        display: grid;
-        gap: 20px;           /* Zmniejszony gap o 20% */
-        max-width: 100%;
-        padding: 20px;       /* Zmniejszony padding */
-        box-sizing: border-box;
-    `;
-    
-    const style = document.createElement("style");
-    style.id = "palskilen-grid-styles";
-    style.textContent = `
-        .palskilen-grid-v3 {
-            grid-template-columns: repeat(auto-fit, minmax(${GRID_CONFIG.DESKTOP_MIN}px, 1fr));
-        }
-        @media (max-width: 1400px) {
-            .palskilen-grid-v3 { grid-template-columns: repeat(auto-fit, minmax(${GRID_CONFIG.TABLET_MIN}px, 1fr)); }
-        }
-        @media (max-width: 900px) {
-            .palskilen-grid-v3 { grid-template-columns: repeat(auto-fit, minmax(${GRID_CONFIG.MOBILE_MIN}px, 1fr)); }
-        }
-        @media (max-width: 600px) {
-            .palskilen-grid-v3 { 
-                grid-template-columns: ${GRID_CONFIG.MOBILE_SINGLE === 0 ? '1fr' : 'repeat(auto-fit, minmax(' + GRID_CONFIG.MOBILE_SINGLE + 'px, 1fr))'};
-                padding: 15px; gap: 15px;
-            }
-        }
-        @media (max-width: 400px) { .palskilen-grid-v3 { padding: 10px; gap: 12px; } }
-    `;
-    
-    const oldStyle = document.getElementById("palskilen-grid-styles");
-    if (oldStyle) oldStyle.remove();
-    document.head.appendChild(style);
+    // Debounce dla perf
+    const optimal = calculateOptimalCardSize();
+    grid.style.padding = "20px";
+    grid.style.boxSizing = "border-box";
     
     items.forEach(item => grid.appendChild(item));
     return grid;
 }
 
-console.log("🔥 PALSKILEN v3.1 - NOWE LIMITY (-60%):", GRID_CONFIG);
-console.log("📱 Desktop: ~6-8 kart w rzędzie | Mobile: 1 kolumna");
+console.log("🔥 PALSKILEN v3.3 - PALSKILEN AUTO-SIZING AKTYWNY!");
+console.log("📐 Rozmiar okna:", window.innerWidth, "→ Karty:", calculateOptimalCardSize());
 
 function showHome() {
     const container = document.createElement("div");
+    container.style.cssText = "width: 100%; padding: 20px; box-sizing: border-box;";
+    
     Object.entries(moviesData).forEach(([studio, movies]) => {
         const section = document.createElement("div");
         section.className = "section";
@@ -145,7 +176,7 @@ function showHome() {
         
         const header = document.createElement("h2");
         header.innerText = studio;
-        header.style.cssText = "margin-bottom: 20px; font-size: 26px; color: #fff;";
+        header.style.cssText = "margin-bottom: 25px; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; text-align: center;";
         section.appendChild(header);
         
         const items = Object.values(movies).map(info => {
@@ -154,13 +185,13 @@ function showHome() {
             const action = isFilm ? openMovie : openSerial;
             return createCard(info.name, info, btnText, action);
         });
-        section.appendChild(createResponsiveGrid(items));
+        
+        section.appendChild(createSmartGrid(items)); // SMART GRID!
         container.appendChild(section);
     });
     pushView(container);
 }
 
-// 🔥 SKRÓCONE FUNKCJE (bez zmian logiki)
 function openMovie(info, episodeNumber = null) {
     let displayTitle = info.name;
     if (episodeNumber !== null) displayTitle = `Odcinek ${episodeNumber} - ${info.name}`;
@@ -171,12 +202,16 @@ function openSerial(info) {
     const container = document.createElement("div");
     const header = document.createElement("h2");
     header.innerText = `${info.name} - Sezony`;
-    header.style.marginBottom = "20px";
+    header.style.marginBottom = "30px";
+    header.style.textAlign = "center";
+    header.style.fontSize = "clamp(1.6rem, 4vw, 2.4rem)";
     container.appendChild(header);
+    
     const seasonItems = Object.entries(info)
         .filter(([key]) => key.startsWith("Season"))
         .map(([, value]) => createCard(value.name, value, "Otwórz", openSeason));
-    container.appendChild(createResponsiveGrid(seasonItems));
+    
+    container.appendChild(createSmartGrid(seasonItems)); // SMART!
     pushView(container);
 }
 
@@ -184,26 +219,32 @@ function openSeason(season) {
     const container = document.createElement("div");
     const header = document.createElement("h2");
     header.innerText = `${season.name} - Odcinki`;
-    header.style.marginBottom = "20px";
+    header.style.marginBottom = "30px";
+    header.style.textAlign = "center";
+    header.style.fontSize = "clamp(1.6rem, 4vw, 2.4rem)";
     container.appendChild(header);
+    
     const episodeItems = Object.entries(season)
         .filter(([key]) => key.startsWith("Odcinek"))
         .map(([key, value]) => {
             let episodeNumber = key.replace("Odcinek_", "").replace("Odcinek ", "");
             return createCard(value.name, value, "Oglądaj", (info) => openMovie(info, episodeNumber));
         });
-    container.appendChild(createResponsiveGrid(episodeItems));
+    
+    container.appendChild(createSmartGrid(episodeItems)); // SMART!
     pushView(container);
 }
 
 function createPlayerView(title, url, info) {
     const container = document.createElement("div");
+    container.style.cssText = "width: 100vw; height: 100vh; padding: clamp(25px, 5vw, 50px); display: flex; flex-direction: column; box-sizing: border-box; overflow: hidden;";
+    
     const headerContainer = document.createElement("div");
     headerContainer.style.cssText = "position: relative; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 3px solid #333;";
     
     const header = document.createElement("h2");
     header.innerText = title;
-    header.style.cssText = "margin: 0; display: inline-block; font-size: 24px;";
+    header.style.cssText = "margin: 0; display: inline-block; font-size: clamp(1.5rem, 4vw, 2.5rem);";
     
     const downloadBtn = document.createElement("button");
     downloadBtn.innerText = "⬇️ Pobierz";
@@ -224,7 +265,7 @@ function createPlayerView(title, url, info) {
     headerContainer.appendChild(downloadBtn);
 
     const player = document.createElement("div");
-    player.style.cssText = "position: relative; width: 100%;";
+    player.style.cssText = "position: relative; width: 100%; flex: 1; display: flex; align-items: center; justify-content: center;";
 
     if (url && url !== "URL") {
         let embedUrl = url.includes("bysesukior.com/e/") ? url :
@@ -234,12 +275,12 @@ function createPlayerView(title, url, info) {
 
         if (embedUrl.includes("bysesukior.com") || embedUrl.includes("youtube.com/embed") || embedUrl.includes("drive.google.com")) {
             const iframe = document.createElement("iframe");
-            Object.assign(iframe, {src: embedUrl, width: "100%", height: "75vh", frameBorder: "0", style: {borderRadius: "12px"}});
+            Object.assign(iframe, {src: embedUrl, width: "100%", height: "100%", frameBorder: "0", style: {borderRadius: "12px"}});
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
             iframe.allowFullscreen = true; player.appendChild(iframe);
         } else {
             const video = document.createElement("video");
-            Object.assign(video, {src: embedUrl, controls: true, width: "100%", height: "75vh", style: {borderRadius: "12px", objectFit: "contain"}, autoplay: true});
+            Object.assign(video, {src: embedUrl, controls: true, width: "100%", height: "100%", style: {borderRadius: "12px", objectFit: "contain"}, autoplay: true});
             player.appendChild(video);
         }
     } else {
