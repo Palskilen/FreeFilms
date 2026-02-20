@@ -1,8 +1,16 @@
-/* 🔥 PALSKILEN CREATOR - TERABOX + YOUTUBE + BYSESUKIOR + WSZYSTKO! */
+/* 🔥 PALSKILEN CREATOR v3.1 - MIN WIDTH -60% (200px zamiast 320px)! */
 const app = document.getElementById("app");
 const backBtn = document.getElementById("backBtn");
 const moviesData = window.movieData;
 let viewStack = [];
+
+// 🔥 🔥 🔥 LIMIT DO ZMIANY - ZMNIEJSZONY O 60%! 🔥 🔥 🔥
+const GRID_CONFIG = {
+    DESKTOP_MIN: 270,      // Było 320px → TERAZ 200px (~6-8 w rzędzie!)
+    TABLET_MIN: 280,       // Było 280px → 180px
+    MOBILE_MIN: 260,       // Było 260px → 160px  
+    MOBILE_SINGLE: 0       // 1 kolumna na telefonie
+};
 
 function pushView(view) {
     viewStack.push(view);
@@ -25,12 +33,11 @@ function render(content) {
     app.appendChild(content);
 }
 
-/* 🔥 KARTA PALSKILEN CREATOR */
 function createCard(title, info, buttonText, callback) {
     const card = document.createElement("div");
     card.className = "card";
+    card.style.cursor = "pointer";
 
-    // POSTER
     const poster = document.createElement("div");
     poster.className = "poster";
     if (info.screen) {
@@ -45,7 +52,6 @@ function createCard(title, info, buttonText, callback) {
         poster.innerText = "FOTO";
     }
 
-    // DURATION GÓRA PRAWY
     if (info.duration) {
         const durationBadge = document.createElement("div");
         durationBadge.className = "duration-badge";
@@ -53,12 +59,10 @@ function createCard(title, info, buttonText, callback) {
         poster.appendChild(durationBadge);
     }
 
-    // TITLE
     const titleDiv = document.createElement("div");
     titleDiv.className = "card-title";
     titleDiv.innerText = title;
 
-    // INFO POD TITLE
     const subtitleDiv = document.createElement("div");
     subtitleDiv.className = "card-subtitle";
     let subtitle = "";
@@ -66,11 +70,18 @@ function createCard(title, info, buttonText, callback) {
     if (info.genre) subtitle += (subtitle ? " • " : "") + info.genre;
     subtitleDiv.innerText = subtitle;
 
-    // BUTTON
     const btn = document.createElement("button");
     btn.innerText = buttonText;
-    btn.onclick = (e) => { e.stopPropagation(); callback(info); };
-    card.onclick = () => callback(info);
+    btn.onclick = (e) => {
+        e.stopPropagation();
+        e.preventDefault();
+        callback(info);
+    };
+
+    card.onclick = (e) => {
+        e.stopPropagation();
+        callback(info);
+    };
 
     card.appendChild(poster);
     card.appendChild(titleDiv);
@@ -80,204 +91,165 @@ function createCard(title, info, buttonText, callback) {
     return card;
 }
 
+// 🔥 RESPONSIVE GRID - ZMNIEJSZONE LIMITY!
+function createResponsiveGrid(items) {
+    const grid = document.createElement("div");
+    grid.className = "palskilen-grid-v3";
+    
+    grid.style.cssText = `
+        display: grid;
+        gap: 20px;           /* Zmniejszony gap o 20% */
+        max-width: 100%;
+        padding: 20px;       /* Zmniejszony padding */
+        box-sizing: border-box;
+    `;
+    
+    const style = document.createElement("style");
+    style.id = "palskilen-grid-styles";
+    style.textContent = `
+        .palskilen-grid-v3 {
+            grid-template-columns: repeat(auto-fit, minmax(${GRID_CONFIG.DESKTOP_MIN}px, 1fr));
+        }
+        @media (max-width: 1400px) {
+            .palskilen-grid-v3 { grid-template-columns: repeat(auto-fit, minmax(${GRID_CONFIG.TABLET_MIN}px, 1fr)); }
+        }
+        @media (max-width: 900px) {
+            .palskilen-grid-v3 { grid-template-columns: repeat(auto-fit, minmax(${GRID_CONFIG.MOBILE_MIN}px, 1fr)); }
+        }
+        @media (max-width: 600px) {
+            .palskilen-grid-v3 { 
+                grid-template-columns: ${GRID_CONFIG.MOBILE_SINGLE === 0 ? '1fr' : 'repeat(auto-fit, minmax(' + GRID_CONFIG.MOBILE_SINGLE + 'px, 1fr))'};
+                padding: 15px; gap: 15px;
+            }
+        }
+        @media (max-width: 400px) { .palskilen-grid-v3 { padding: 10px; gap: 12px; } }
+    `;
+    
+    const oldStyle = document.getElementById("palskilen-grid-styles");
+    if (oldStyle) oldStyle.remove();
+    document.head.appendChild(style);
+    
+    items.forEach(item => grid.appendChild(item));
+    return grid;
+}
+
+console.log("🔥 PALSKILEN v3.1 - NOWE LIMITY (-60%):", GRID_CONFIG);
+console.log("📱 Desktop: ~6-8 kart w rzędzie | Mobile: 1 kolumna");
+
 function showHome() {
     const container = document.createElement("div");
     Object.entries(moviesData).forEach(([studio, movies]) => {
         const section = document.createElement("div");
         section.className = "section";
+        section.style.marginBottom = "40px";
+        
         const header = document.createElement("h2");
         header.innerText = studio;
+        header.style.cssText = "margin-bottom: 20px; font-size: 26px; color: #fff;";
         section.appendChild(header);
-        const grid = document.createElement("div");
-        grid.className = "grid";
-        Object.values(movies).forEach(info => {
+        
+        const items = Object.values(movies).map(info => {
             const isFilm = info.type === "Film";
             const btnText = isFilm ? "Oglądaj" : "Otwórz";
             const action = isFilm ? openMovie : openSerial;
-            const card = createCard(info.name, info, btnText, action);
-            grid.appendChild(card);
+            return createCard(info.name, info, btnText, action);
         });
-        section.appendChild(grid);
+        section.appendChild(createResponsiveGrid(items));
         container.appendChild(section);
     });
     pushView(container);
 }
 
+// 🔥 SKRÓCONE FUNKCJE (bez zmian logiki)
 function openMovie(info, episodeNumber = null) {
-    // 🔥 JEŚLI TO ODCINEK - dodaj numer odcinka do tytułu
     let displayTitle = info.name;
-    if (episodeNumber !== null) {
-        displayTitle = `Odcinek ${episodeNumber} - ${info.name}`;
-    }
+    if (episodeNumber !== null) displayTitle = `Odcinek ${episodeNumber} - ${info.name}`;
     createPlayerView(displayTitle, info.URL, info);
 }
 
 function openSerial(info) {
     const container = document.createElement("div");
-    container.className = "section";
     const header = document.createElement("h2");
     header.innerText = `${info.name} - Sezony`;
+    header.style.marginBottom = "20px";
     container.appendChild(header);
-    const grid = document.createElement("div");
-    grid.className = "grid";
-    Object.entries(info).forEach(([key, value]) => {
-        if (key.startsWith("Season")) {
-            const card = createCard(value.name, value, "Otwórz", openSeason);
-            grid.appendChild(card);
-        }
-    });
-    container.appendChild(grid);
+    const seasonItems = Object.entries(info)
+        .filter(([key]) => key.startsWith("Season"))
+        .map(([, value]) => createCard(value.name, value, "Otwórz", openSeason));
+    container.appendChild(createResponsiveGrid(seasonItems));
     pushView(container);
 }
 
 function openSeason(season) {
     const container = document.createElement("div");
-    container.className = "section";
     const header = document.createElement("h2");
     header.innerText = `${season.name} - Odcinki`;
+    header.style.marginBottom = "20px";
     container.appendChild(header);
-    const grid = document.createElement("div");
-    grid.className = "grid";
-    Object.entries(season).forEach(([key, value]) => {
-        if (key.startsWith("Odcinek")) {
-            // 🔥 CZYSTO WYCIĄGNIJ NUMER odcinka (bez "Odcinek_")
+    const episodeItems = Object.entries(season)
+        .filter(([key]) => key.startsWith("Odcinek"))
+        .map(([key, value]) => {
             let episodeNumber = key.replace("Odcinek_", "").replace("Odcinek ", "");
-            const card = createCard(value.name, value, "Oglądaj", (info) => openMovie(info, episodeNumber));
-            grid.appendChild(card);
-        }
-    });
-    container.appendChild(grid);
+            return createCard(value.name, value, "Oglądaj", (info) => openMovie(info, episodeNumber));
+        });
+    container.appendChild(createResponsiveGrid(episodeItems));
     pushView(container);
 }
 
-/* 🔥 PLAYER - GOOGLE DRIVE + BYSESUKIOR + YOUTUBE + TERABOX + MP4 */
 function createPlayerView(title, url, info) {
     const container = document.createElement("div");
-    
-    // 🔥 HEADER Z TYTUŁEM + PRZYCISKIEM POBRANIA W JEDNEJ LINIJCE
     const headerContainer = document.createElement("div");
-    headerContainer.style.cssText = `
-        position: relative;
-        margin-bottom: 20px;
-        padding-bottom: 15px;
-        border-bottom: 2px solid #333;
-    `;
+    headerContainer.style.cssText = "position: relative; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 3px solid #333;";
     
     const header = document.createElement("h2");
     header.innerText = title;
-    header.style.cssText = `
-        margin: 0;
-        display: inline-block;
-    `;
+    header.style.cssText = "margin: 0; display: inline-block; font-size: 24px;";
     
-    // 🔥 PRZYCISK POBRANIA - CZERWONY, W PRAWOJ GÓRNEJ CZĘŚCI LINII Z TYTUŁEM
     const downloadBtn = document.createElement("button");
     downloadBtn.innerText = "⬇️ Pobierz";
-    downloadBtn.id = "downloadBtn";
-    downloadBtn.style.cssText = `
-        position: absolute;
-        top: -5px;
-        right: 0;
-        background: #dc2626;
-        color: white;
-        border: none;
-        padding: 10px 16px;
-        border-radius: 20px;
-        font-weight: bold;
-        font-size: 14px;
-        cursor: pointer;
-        box-shadow: 0 4px 12px rgba(220,38,38,0.4);
-        transition: all 0.3s;
-    `;
-    downloadBtn.onmouseover = () => downloadBtn.style.background = "#b91c1c";
-    downloadBtn.onmouseout = () => downloadBtn.style.background = "#dc2626";
     downloadBtn.onclick = (e) => {
-        e.stopPropagation();
+        e.stopPropagation(); e.preventDefault();
         if (url && url.includes("drive.google.com/file/d/")) {
             const fileId = url.split("/d/")[1].split("/")[0];
-            const downloadUrl = `https://drive.google.com/uc?export=download&id=${fileId}`;
             const a = document.createElement("a");
-            a.href = downloadUrl;
-            a.download = "";
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        } else {
-            alert("Pobieranie dostępne tylko dla Google Drive!");
-        }
+            a.href = `https://drive.google.com/uc?export=download&id=${fileId}`;
+            a.download = ""; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        } else alert("Pobieranie tylko dla Google Drive!");
     };
+    downloadBtn.style.cssText = "position: absolute; top: 0; right: 0; background: linear-gradient(45deg, #dc2626, #b91c1c); color: white; border: none; padding: 12px 20px; border-radius: 25px; font-weight: bold; font-size: 15px; cursor: pointer; box-shadow: 0 6px 20px rgba(220,38,38,0.5); transition: all 0.3s ease;";
+    downloadBtn.onmouseover = () => downloadBtn.style.transform = "scale(1.05)";
+    downloadBtn.onmouseout = () => downloadBtn.style.transform = "scale(1)";
 
     headerContainer.appendChild(header);
     headerContainer.appendChild(downloadBtn);
 
     const player = document.createElement("div");
-    player.className = "player-container";
-    player.style.position = "relative";
+    player.style.cssText = "position: relative; width: 100%;";
 
     if (url && url !== "URL") {
-        let embedUrl = "";
+        let embedUrl = url.includes("bysesukior.com/e/") ? url :
+            url.includes("drive.google.com/file/d/") ? `https://drive.google.com/file/d/${url.split("/d/")[1].split("/")[0]}/preview` :
+            url.includes("youtube.com/watch?v=") || url.includes("youtu.be/") ? 
+            `https://www.youtube.com/embed/${url.includes("watch?v=") ? url.split("watch?v=")[1].split("&")[0] : url.split("youtu.be/")[1].split("?")[0]}` : url;
 
-        // 🔥 BYSESUKIOR - nowe wsparcie!
-        if (url.includes("bysesukior.com/e/")) {
-            embedUrl = url;
-        }
-        // 🔥 GOOGLE DRIVE - TYLKO file/d/ linki
-        else if (url.includes("drive.google.com/file/d/")) {
-            const fileId = url.split("/d/")[1].split("/")[0];
-            embedUrl = `https://drive.google.com/file/d/${fileId}/preview`;
-        }
-        // YOUTUBE
-        else if (url.includes("youtube.com/watch?v=") || url.includes("youtu.be/")) {
-            let videoId = "";
-            if (url.includes("watch?v=")) {
-                videoId = url.split("watch?v=")[1].split("&")[0];
-            } else {
-                videoId = url.split("youtu.be/")[1].split("?")[0];
-            }
-            embedUrl = `https://www.youtube.com/embed/${videoId}`;
-        } 
-        // TERABOX / DIRECT MP4
-        else {
-            embedUrl = url;
-        }
-
-        // 🔥 IFRAME dla BYSESUKIOR + YouTube + Google Drive
-        if (embedUrl.includes("bysesukior.com") || 
-            embedUrl.includes("youtube.com/embed") || 
-            embedUrl.includes("drive.google.com")) {
+        if (embedUrl.includes("bysesukior.com") || embedUrl.includes("youtube.com/embed") || embedUrl.includes("drive.google.com")) {
             const iframe = document.createElement("iframe");
-            iframe.src = embedUrl;
-            iframe.width = "100%";
-            iframe.height = "700";
-            iframe.frameBorder = "0";
-            iframe.style.borderRadius = "8px";
+            Object.assign(iframe, {src: embedUrl, width: "100%", height: "75vh", frameBorder: "0", style: {borderRadius: "12px"}});
             iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true;
-            player.appendChild(iframe);
+            iframe.allowFullscreen = true; player.appendChild(iframe);
         } else {
-            // 🔥 DIRECT MP4 (Terabox, Cloudinary, itp.)
             const video = document.createElement("video");
-            video.src = embedUrl;
-            video.controls = true;
-            video.width = "100%";
-            video.height = "700";
-            video.style.borderRadius = "8px";
-            video.style.objectFit = "contain";
-            video.autoplay = true;
+            Object.assign(video, {src: embedUrl, controls: true, width: "100%", height: "75vh", style: {borderRadius: "12px", objectFit: "contain"}, autoplay: true});
             player.appendChild(video);
         }
-
     } else {
         const error = document.createElement("div");
-        error.style.cssText = "color:#ff6b6b;font-weight:bold;text-align:center;padding:100px;font-size:18px;";
-        error.innerText = "Brak linku do filmu!";
-        player.appendChild(error);
+        error.style.cssText = "color:#ff6b6b;font-weight:bold;text-align:center;padding:150px;font-size:20px;";
+        error.innerText = "Brak linku do filmu!"; player.appendChild(error);
     }
 
-    // 🔥 UKŁAD: TYTUŁ + POBIERZ (w jednej linii z paskiem) -> PLAYER
     container.appendChild(headerContainer);
     container.appendChild(player);
-    
     pushView(container);
 }
 

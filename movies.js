@@ -92,5 +92,71 @@ window.movieData = {
                 }
             }
         }
+    },
+    "WARNES BROS" : {
+        "Harry Potter i Kamień Filozoficzny" : {
+            "name": "Harry Potter i Kamień Filozoficzny",
+            "year": 2001,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-kamien-filozoficzny-poster.webp",
+            "URL": "https://bysesukior.com/e/g4be2870gcb3"
+        },
+        "Harry Potter i Komnata Tajemnic" : {
+            "name": "Harry Potter i Komnata Tajemnic",
+            "year": 2002,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-komnata-tajemnic-poster.webp",
+            "URL": "https://bysesukior.com/e/cl23vscsvwtp"
+        },
+        "Harry Potter i więzień Azkabanu" : {
+            "name": "Harry Potter i więzień Azkabanu",
+            "year": 2004,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-wiezien-azkabanu-poster.webp",
+            "URL": "https://bysesukior.com/e/ture8isgrbdd"
+        },
+        "Harry Potter i Czara Ognia" : {
+            "name": "Harry Potter i Czara Ognia",
+            "year": 2005,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-czara-ognia-poster.webp",
+            "URL": "https://bysesukior.com/e/32x1h4ej3k6q"
+        },
+        "Harry Potter i Zakon Feniksa" : {
+            "name": "Harry Potter i Zakon Feniksa",
+            "year": 2007,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-zakon-feniksa-poster.webp",
+            "URL": "https://bysesukior.com/e/46uss340ajna"
+        },
+        "Harry Potter i Książę Półkrwi" : {
+            "name": "Harry Potter i Książę Półkrwi",
+            "year": 2009,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-ksiaze-polkrwi-poster.webp",
+            "URL": "https://bysesukior.com/e/d11uaujl4h97"
+        },
+        "Harry Potter i Insygnia Śmierci: Część I" : {
+            "name": "Harry Potter i Insygnia Śmierci: Część I",
+            "year": 2001,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-insygnia-smierci-czesc-i-poster.webp",
+            "URL": "https://bysesukior.com/e/7wxe8fxst12s"
+        },
+        "Harry Potter i Insygnia Śmierci: Część II" : {
+            "name": "Harry Potter i Insygnia Śmierci: Część II",
+            "year": 2011,
+            "genre": "Fantasy Przygodowy",
+            "duration": "152m",
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-insygnia-smierci-czesc-ii-poster.webp",
+            "URL": "https://bysesukior.com/e/h30cazv7aj51"
+        },
     }
 };
