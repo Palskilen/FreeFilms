@@ -92,14 +92,5 @@ window.movieData = {
                 }
             }
         }
-    },
-    "Marvel": {
-        "Iron Man III": {
-            "type": "Film",
-            "name": "Iron Man III",
-            "year": 2010,
-            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/iron-man-3-poster.webp",
-            "URL": "https://www.youtube.com/watch?v=UdUyONRQP18"
-        }
     }
 };
