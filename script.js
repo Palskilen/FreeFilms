@@ -237,60 +237,176 @@ function openSeason(season) {
 
 function createPlayerView(title, url, info) {
     const container = document.createElement("div");
-    container.style.cssText = "width: 100vw; height: 100vh; padding: clamp(25px, 5vw, 50px); display: flex; flex-direction: column; box-sizing: border-box; overflow: hidden;";
+    container.style.cssText = `
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #000;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        padding: clamp(15px, 3vw, 30px);
+        box-sizing: border-box;
+        overflow: hidden;
+    `;
     
-    const headerContainer = document.createElement("div");
-    headerContainer.style.cssText = "position: relative; margin-bottom: 25px; padding-bottom: 20px; border-bottom: 3px solid #333;";
+    // 🔙 TOP BAR Z POWROTEM
+    const topBar = document.createElement("div");
+    topBar.style.cssText = `
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 2px solid #333;
+        flex-shrink: 0;
+    `;
     
+    // PRZYCISK POWRÓT
+    const backBtnPlayer = document.createElement("button");
+    backBtnPlayer.innerHTML = "← Powrót";
+    backBtnPlayer.onclick = (e) => {
+        e.stopPropagation();
+        goBack();
+    };
+    backBtnPlayer.style.cssText = `
+        background: rgba(255,255,255,0.1);
+        color: white;
+        border: 1px solid #444;
+        padding: 8px 16px;
+        border-radius: 25px;
+        font-weight: bold;
+        font-size: clamp(0.9rem, 2vw, 1.1rem);
+        cursor: pointer;
+        backdrop-filter: blur(10px);
+        transition: all 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+    `;
+    backBtnPlayer.onmouseover = () => {
+        backBtnPlayer.style.background = "rgba(255,255,255,0.2)";
+        backBtnPlayer.style.transform = "scale(1.05)";
+    };
+    backBtnPlayer.onmouseout = () => {
+        backBtnPlayer.style.background = "rgba(255,255,255,0.1)";
+        backBtnPlayer.style.transform = "scale(1)";
+    };
+
+    // TYTUŁ
     const header = document.createElement("h2");
     header.innerText = title;
-    header.style.cssText = "margin: 0; display: inline-block; font-size: clamp(1.5rem, 4vw, 2.5rem);";
+    header.style.cssText = `
+        margin: 0;
+        flex: 1;
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        color: white;
+        text-align: center;
+        line-height: 1.2;
+    `;
     
+    // POBIERZ
     const downloadBtn = document.createElement("button");
-    downloadBtn.innerText = "⬇️ Pobierz";
+    downloadBtn.innerText = "⬇️";
     downloadBtn.onclick = (e) => {
         e.stopPropagation(); e.preventDefault();
         if (url && url.includes("drive.google.com/file/d/")) {
             const fileId = url.split("/d/")[1].split("/")[0];
             const a = document.createElement("a");
             a.href = `https://drive.google.com/uc?export=download&id=${fileId}`;
-            a.download = ""; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+            a.download = ""; 
+            document.body.appendChild(a); 
+            a.click(); 
+            document.body.removeChild(a);
         } else alert("Pobieranie tylko dla Google Drive!");
     };
-    downloadBtn.style.cssText = "position: absolute; top: 0; right: 0; background: linear-gradient(45deg, #dc2626, #b91c1c); color: white; border: none; padding: 12px 20px; border-radius: 25px; font-weight: bold; font-size: 15px; cursor: pointer; box-shadow: 0 6px 20px rgba(220,38,38,0.5); transition: all 0.3s ease;";
-    downloadBtn.onmouseover = () => downloadBtn.style.transform = "scale(1.05)";
+    downloadBtn.style.cssText = `
+        background: linear-gradient(45deg, #dc2626, #b91c1c);
+        color: white;
+        border: none;
+        padding: 10px 14px;
+        border-radius: 50%;
+        font-size: clamp(1rem, 2.5vw, 1.3rem);
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(220,38,38,0.4);
+        transition: all 0.3s;
+        width: 45px;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    `;
+    downloadBtn.onmouseover = () => downloadBtn.style.transform = "scale(1.1)";
     downloadBtn.onmouseout = () => downloadBtn.style.transform = "scale(1)";
 
-    headerContainer.appendChild(header);
-    headerContainer.appendChild(downloadBtn);
+    topBar.appendChild(backBtnPlayer);
+    topBar.appendChild(header);
+    topBar.appendChild(downloadBtn);
 
+    // 🎥 PLAYER - 100% POZOSTAŁEJ WYSOKOŚCI
     const player = document.createElement("div");
-    player.style.cssText = "position: relative; width: 100%; flex: 1; display: flex; align-items: center; justify-content: center;";
+    player.style.cssText = `
+        flex: 1;
+        width: 100%;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #111;
+        border-radius: 12px;
+        overflow: hidden;
+    `;
 
     if (url && url !== "URL") {
         let embedUrl = url.includes("bysesukior.com/e/") ? url :
-            url.includes("drive.google.com/file/d/") ? `https://drive.google.com/file/d/${url.split("/d/")[1].split("/")[0]}/preview` :
+            url.includes("drive.google.com/file/d/") ? 
+            `https://drive.google.com/file/d/${url.split("/d/")[1].split("/")[0]}/preview` :
             url.includes("youtube.com/watch?v=") || url.includes("youtu.be/") ? 
             `https://www.youtube.com/embed/${url.includes("watch?v=") ? url.split("watch?v=")[1].split("&")[0] : url.split("youtu.be/")[1].split("?")[0]}` : url;
 
         if (embedUrl.includes("bysesukior.com") || embedUrl.includes("youtube.com/embed") || embedUrl.includes("drive.google.com")) {
             const iframe = document.createElement("iframe");
-            Object.assign(iframe, {src: embedUrl, width: "100%", height: "100%", frameBorder: "0", style: {borderRadius: "12px"}});
-            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
-            iframe.allowFullscreen = true; player.appendChild(iframe);
+            iframe.src = embedUrl;
+            iframe.width = "100%";
+            iframe.height = "100%";
+            iframe.frameBorder = "0";
+            iframe.style.cssText = "border-radius: inherit; border: none;";
+            iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+            iframe.allowFullscreen = true;
+            player.appendChild(iframe);
         } else {
             const video = document.createElement("video");
-            Object.assign(video, {src: embedUrl, controls: true, width: "100%", height: "100%", style: {borderRadius: "12px", objectFit: "contain"}, autoplay: true});
+            video.src = embedUrl;
+            video.controls = true;
+            video.width = "100%";
+            video.height = "100%";
+            video.style.cssText = "border-radius: inherit; object-fit: contain; background: #000;";
+            video.autoplay = true;
             player.appendChild(video);
         }
     } else {
         const error = document.createElement("div");
-        error.style.cssText = "color:#ff6b6b;font-weight:bold;text-align:center;padding:150px;font-size:20px;";
-        error.innerText = "Brak linku do filmu!"; player.appendChild(error);
+        error.style.cssText = `
+            color: #ff6b6b;
+            font-weight: bold;
+            text-align: center;
+            padding: 40px;
+            font-size: clamp(1.2rem, 4vw, 1.8rem);
+        `;
+        error.innerText = "❌ Brak linku do filmu!";
+        player.appendChild(error);
     }
 
-    container.appendChild(headerContainer);
+    container.appendChild(topBar);
     container.appendChild(player);
+
+    // ESC + klik poza player
+    container.onkeydown = (e) => { if (e.key === "Escape") goBack(); };
+    player.onclick = (e) => { /* fullscreen toggle jeśli potrzeba */ };
+
     pushView(container);
 }
 

@@ -95,6 +95,7 @@ window.movieData = {
     },
     "WARNES BROS" : {
         "Harry Potter i Kamień Filozoficzny" : {
+            "type" : "Film",
             "name": "Harry Potter i Kamień Filozoficzny",
             "year": 2001,
             "genre": "Fantasy Przygodowy",
@@ -103,6 +104,7 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/g4be2870gcb3"
         },
         "Harry Potter i Komnata Tajemnic" : {
+            "type" : "Film",
             "name": "Harry Potter i Komnata Tajemnic",
             "year": 2002,
             "genre": "Fantasy Przygodowy",
@@ -111,6 +113,7 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/cl23vscsvwtp"
         },
         "Harry Potter i więzień Azkabanu" : {
+            "type" : "Film",
             "name": "Harry Potter i więzień Azkabanu",
             "year": 2004,
             "genre": "Fantasy Przygodowy",
@@ -119,6 +122,7 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/ture8isgrbdd"
         },
         "Harry Potter i Czara Ognia" : {
+            "type" : "Film",
             "name": "Harry Potter i Czara Ognia",
             "year": 2005,
             "genre": "Fantasy Przygodowy",
@@ -127,6 +131,7 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/32x1h4ej3k6q"
         },
         "Harry Potter i Zakon Feniksa" : {
+            "type" : "Film",
             "name": "Harry Potter i Zakon Feniksa",
             "year": 2007,
             "genre": "Fantasy Przygodowy",
@@ -135,6 +140,7 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/46uss340ajna"
         },
         "Harry Potter i Książę Półkrwi" : {
+            "type" : "Film",
             "name": "Harry Potter i Książę Półkrwi",
             "year": 2009,
             "genre": "Fantasy Przygodowy",
@@ -143,6 +149,7 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/d11uaujl4h97"
         },
         "Harry Potter i Insygnia Śmierci: Część I" : {
+            "type" : "Film",
             "name": "Harry Potter i Insygnia Śmierci: Część I",
             "year": 2001,
             "genre": "Fantasy Przygodowy",
@@ -151,6 +158,7 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/7wxe8fxst12s"
         },
         "Harry Potter i Insygnia Śmierci: Część II" : {
+            "type" : "Film",
             "name": "Harry Potter i Insygnia Śmierci: Część II",
             "year": 2011,
             "genre": "Fantasy Przygodowy",
