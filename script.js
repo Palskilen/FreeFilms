@@ -1,10 +1,15 @@
-/* 🔥 PALSKILEN CREATOR v3.3 - AUTO-SIZING KART (Palskilen Style!) 🔥 */
+/* 🔥 PALSKILEN CREATOR v3.3 + SEARCH v1.0 (sticky top + wyszukiwarka na home) 🔥 */
 
 const app = document.getElementById("app");
 const backBtn = document.getElementById("backBtn");
 const moviesData = window.movieData;
+const searchInput = document.getElementById("searchInput");
+
 let viewStack = [];
 
+/* =========================
+   NAV
+========================= */
 function pushView(view) {
     viewStack.push(view);
     render(view);
@@ -26,33 +31,37 @@ function render(content) {
     app.appendChild(content);
 }
 
-// 🧠 AUTO-CALCULATE CARD SIZE
+/* =========================
+   🧠 AUTO-CALCULATE CARD SIZE
+========================= */
 function calculateOptimalCardSize() {
     const container = document.documentElement; // full viewport
     const containerWidth = container.clientWidth;
-    
+
     // Magiczny algorytm Palskilen - idealny rozmiar karty
     let baseSize = Math.floor(containerWidth / 8); // cel: ~8 kart
     baseSize = Math.max(330, Math.min(320, baseSize)); // granice
-    
+
     const marginTotal = 10; // 5px z każdej strony x2
     const gap = 20; // gap między kartami
-    
+
     return {
         width: baseSize,
-        margin: '5px',
+        margin: "5px",
         gap: `${gap}px`,
-        cols: Math.floor((containerWidth - 40) / (baseSize + gap + marginTotal))
+        cols: Math.floor((containerWidth - 40) / (baseSize + gap + marginTotal)),
     };
 }
 
-// 🔄 Dynamiczne style na resize
+/* =========================
+   🔄 Dynamiczne style na resize
+========================= */
 function updateGridStyles() {
     const optimal = calculateOptimalCardSize();
-    
+
     const style = document.getElementById("palskilen-dynamic-styles");
     if (style) style.remove();
-    
+
     const newStyle = document.createElement("style");
     newStyle.id = "palskilen-dynamic-styles";
     newStyle.textContent = `
@@ -75,20 +84,52 @@ function updateGridStyles() {
             }
         }
     `;
-    
+
     document.head.appendChild(newStyle);
-    
+
     // Update wszystkich istniejących gridów
-    document.querySelectorAll('.palskilen-auto-grid').forEach(grid => {
+    document.querySelectorAll(".palskilen-auto-grid").forEach((grid) => {
         grid.style.gridTemplateColumns = `repeat(${optimal.cols}, ${optimal.width}px)`;
         grid.style.gap = optimal.gap;
     });
 }
 
-// 👇 Listener na resize okna
-window.addEventListener('resize', updateGridStyles);
+window.addEventListener("resize", updateGridStyles);
 updateGridStyles(); // initial call
 
+/* =========================
+   SEARCH (HOME ONLY)
+========================= */
+function normalizeText(str) {
+    return (str ?? "")
+        .toString()
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "") // akcenty
+        .replace(/[^a-z0-9]/g, ""); // wywala spacje, myślniki, :, znaki specjalne
+}
+
+function matchesQuery(title, query) {
+    const t = normalizeText(title);
+    const q = normalizeText(query);
+    if (!q) return true;
+    return t.includes(q); // zachowuje kolejność
+}
+
+function isHomeView() {
+    return viewStack.length === 1;
+}
+
+if (searchInput) {
+    searchInput.addEventListener("input", () => {
+        if (!isHomeView()) return; // nie filtruj w sezonach/playerze
+        renderHomeWithFilter(searchInput.value);
+    });
+}
+
+/* =========================
+   UI ELEMENTS
+========================= */
 function createCard(title, info, buttonText, callback) {
     const card = document.createElement("div");
     card.className = "card palskilen-auto-card"; // AUTO CLASS
@@ -152,46 +193,69 @@ function createCard(title, info, buttonText, callback) {
 function createSmartGrid(items) {
     const grid = document.createElement("div");
     grid.className = "palskilen-auto-grid"; // AUTO GRID CLASS
-    
-    // Debounce dla perf
+
     const optimal = calculateOptimalCardSize();
     grid.style.padding = "20px";
     grid.style.boxSizing = "border-box";
-    
-    items.forEach(item => grid.appendChild(item));
+
+    items.forEach((item) => grid.appendChild(item));
     return grid;
 }
 
-console.log("🔥 PALSKILEN v3.3 - PALSKILEN AUTO-SIZING AKTYWNY!");
+console.log("🔥 PALSKILEN v3.3 + SEARCH v1.0 - AKTYWNY!");
 console.log("📐 Rozmiar okna:", window.innerWidth, "→ Karty:", calculateOptimalCardSize());
 
-function showHome() {
+/* =========================
+   HOME (normal + filtered)
+========================= */
+function buildHomeContainer(query = "") {
     const container = document.createElement("div");
     container.style.cssText = "width: 100%; padding: 20px; box-sizing: border-box;";
-    
+
     Object.entries(moviesData).forEach(([studio, movies]) => {
+        const list = Object.values(movies);
+
+        const filtered = query
+            ? list.filter((info) => matchesQuery(info.name, query))
+            : list;
+
+        if (filtered.length === 0) return;
+
         const section = document.createElement("div");
         section.className = "section";
         section.style.marginBottom = "40px";
-        
+
         const header = document.createElement("h2");
         header.innerText = studio;
-        header.style.cssText = "margin-bottom: 25px; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; text-align: center;";
+        header.style.cssText =
+            "margin-bottom: 25px; font-size: clamp(1.8rem, 4vw, 2.8rem); color: #fff; text-align: center;";
         section.appendChild(header);
-        
-        const items = Object.values(movies).map(info => {
+
+        const items = filtered.map((info) => {
             const isFilm = info.type === "Film";
             const btnText = isFilm ? "Oglądaj" : "Otwórz";
             const action = isFilm ? openMovie : openSerial;
             return createCard(info.name, info, btnText, action);
         });
-        
-        section.appendChild(createSmartGrid(items)); // SMART GRID!
+
+        section.appendChild(createSmartGrid(items));
         container.appendChild(section);
     });
-    pushView(container);
+
+    return container;
 }
 
+function showHome() {
+    pushView(buildHomeContainer(""));
+}
+
+function renderHomeWithFilter(query) {
+    render(buildHomeContainer(query));
+}
+
+/* =========================
+   OPEN MOVIE/SERIAL
+========================= */
 function openMovie(info, episodeNumber = null) {
     let displayTitle = info.name;
     if (episodeNumber !== null) displayTitle = `Odcinek ${episodeNumber} - ${info.name}`;
@@ -206,12 +270,12 @@ function openSerial(info) {
     header.style.textAlign = "center";
     header.style.fontSize = "clamp(1.6rem, 4vw, 2.4rem)";
     container.appendChild(header);
-    
+
     const seasonItems = Object.entries(info)
         .filter(([key]) => key.startsWith("Season"))
         .map(([, value]) => createCard(value.name, value, "Otwórz", openSeason));
-    
-    container.appendChild(createSmartGrid(seasonItems)); // SMART!
+
+    container.appendChild(createSmartGrid(seasonItems));
     pushView(container);
 }
 
@@ -223,18 +287,21 @@ function openSeason(season) {
     header.style.textAlign = "center";
     header.style.fontSize = "clamp(1.6rem, 4vw, 2.4rem)";
     container.appendChild(header);
-    
+
     const episodeItems = Object.entries(season)
         .filter(([key]) => key.startsWith("Odcinek"))
         .map(([key, value]) => {
             let episodeNumber = key.replace("Odcinek_", "").replace("Odcinek ", "");
             return createCard(value.name, value, "Oglądaj", (info) => openMovie(info, episodeNumber));
         });
-    
-    container.appendChild(createSmartGrid(episodeItems)); // SMART!
+
+    container.appendChild(createSmartGrid(episodeItems));
     pushView(container);
 }
 
+/* =========================
+   PLAYER
+========================= */
 function createPlayerView(title, url, info) {
     const container = document.createElement("div");
     container.style.cssText = `
@@ -251,7 +318,7 @@ function createPlayerView(title, url, info) {
         box-sizing: border-box;
         overflow: hidden;
     `;
-    
+
     // 🔙 TOP BAR Z POWROTEM
     const topBar = document.createElement("div");
     topBar.style.cssText = `
@@ -263,7 +330,7 @@ function createPlayerView(title, url, info) {
         border-bottom: 2px solid #333;
         flex-shrink: 0;
     `;
-    
+
     // PRZYCISK POWRÓT
     const backBtnPlayer = document.createElement("button");
     backBtnPlayer.innerHTML = "← Powrót";
@@ -306,19 +373,20 @@ function createPlayerView(title, url, info) {
         text-align: center;
         line-height: 1.2;
     `;
-    
+
     // POBIERZ
     const downloadBtn = document.createElement("button");
     downloadBtn.innerText = "⬇️";
     downloadBtn.onclick = (e) => {
-        e.stopPropagation(); e.preventDefault();
+        e.stopPropagation();
+        e.preventDefault();
         if (url && url.includes("drive.google.com/file/d/")) {
             const fileId = url.split("/d/")[1].split("/")[0];
             const a = document.createElement("a");
             a.href = `https://drive.google.com/uc?export=download&id=${fileId}`;
-            a.download = ""; 
-            document.body.appendChild(a); 
-            a.click(); 
+            a.download = "";
+            document.body.appendChild(a);
+            a.click();
             document.body.removeChild(a);
         } else alert("Pobieranie tylko dla Google Drive!");
     };
@@ -339,14 +407,14 @@ function createPlayerView(title, url, info) {
         align-items: center;
         justify-content: center;
     `;
-    downloadBtn.onmouseover = () => downloadBtn.style.transform = "scale(1.1)";
-    downloadBtn.onmouseout = () => downloadBtn.style.transform = "scale(1)";
+    downloadBtn.onmouseover = () => (downloadBtn.style.transform = "scale(1.1)");
+    downloadBtn.onmouseout = () => (downloadBtn.style.transform = "scale(1)");
 
     topBar.appendChild(backBtnPlayer);
     topBar.appendChild(header);
     topBar.appendChild(downloadBtn);
 
-    // 🎥 PLAYER - 100% POZOSTAŁEJ WYSOKOŚCI
+    // 🎥 PLAYER
     const player = document.createElement("div");
     player.style.cssText = `
         flex: 1;
@@ -361,13 +429,23 @@ function createPlayerView(title, url, info) {
     `;
 
     if (url && url !== "URL") {
-        let embedUrl = url.includes("bysesukior.com/e/") ? url :
-            url.includes("drive.google.com/file/d/") ? 
-            `https://drive.google.com/file/d/${url.split("/d/")[1].split("/")[0]}/preview` :
-            url.includes("youtube.com/watch?v=") || url.includes("youtu.be/") ? 
-            `https://www.youtube.com/embed/${url.includes("watch?v=") ? url.split("watch?v=")[1].split("&")[0] : url.split("youtu.be/")[1].split("?")[0]}` : url;
+        let embedUrl = url.includes("bysesukior.com/e/")
+            ? url
+            : url.includes("drive.google.com/file/d/")
+            ? `https://drive.google.com/file/d/${url.split("/d/")[1].split("/")[0]}/preview`
+            : url.includes("youtube.com/watch?v=") || url.includes("youtu.be/")
+            ? `https://www.youtube.com/embed/${
+                  url.includes("watch?v=")
+                      ? url.split("watch?v=")[1].split("&")[0]
+                      : url.split("youtu.be/")[1].split("?")[0]
+              }`
+            : url;
 
-        if (embedUrl.includes("bysesukior.com") || embedUrl.includes("youtube.com/embed") || embedUrl.includes("drive.google.com")) {
+        if (
+            embedUrl.includes("bysesukior.com") ||
+            embedUrl.includes("youtube.com/embed") ||
+            embedUrl.includes("drive.google.com")
+        ) {
             const iframe = document.createElement("iframe");
             iframe.src = embedUrl;
             iframe.width = "100%";
@@ -403,11 +481,16 @@ function createPlayerView(title, url, info) {
     container.appendChild(topBar);
     container.appendChild(player);
 
-    // ESC + klik poza player
-    container.onkeydown = (e) => { if (e.key === "Escape") goBack(); };
-    player.onclick = (e) => { /* fullscreen toggle jeśli potrzeba */ };
+    // ESC
+    container.onkeydown = (e) => {
+        if (e.key === "Escape") goBack();
+    };
+    player.onclick = (e) => {};
 
     pushView(container);
 }
 
+/* =========================
+   START
+========================= */
 showHome();

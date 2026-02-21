@@ -168,3 +168,37 @@ body {
 .play-btn:hover {
     background: #ff0a16;
 }
+
+/* style.css */
+
+/* 🔥 TOP BAR ALWAYS ON TOP */
+.top-panel {
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+}
+
+/* 🔥 SEARCH INPUT ON TOP BAR */
+.search-input {
+    margin-left: auto;
+    width: min(520px, 45vw);
+    height: 46px;
+    background: #121212;
+    color: white;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 0 16px;
+    font-size: 16px;
+    font-weight: 600;
+    outline: none;
+}
+
+.search-input::placeholder {
+    color: #888;
+    font-weight: 500;
+}
+
+.search-input:focus {
+    border-color: #e50914;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.25);
+}
