@@ -920,7 +920,7 @@ window.movieData = {
             "year": "2011",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "124m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/kapitan-ameryka-pierwsze-starcie-poster.webp",
             "URL": "https://bysesukior.com/e/itklgkzxfxwg"
         },
@@ -930,7 +930,7 @@ window.movieData = {
             "year": "2019",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "124m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/kapitan-marvel-poster.webp",
             "URL": "https://bysesukior.com/e/3o9p8a79pdhd"
         },
@@ -940,7 +940,7 @@ window.movieData = {
             "year": "2008",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "126m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/iron-man-2008-poster.webp",
             "URL": "https://bysesukior.com/e/c6e85c3c5yb4"
         },
@@ -950,7 +950,7 @@ window.movieData = {
             "year": "2010",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "124m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/iron-man-2-2010-poster.webp",
             "URL": "https://bysesukior.com/e/a63m0z8nfatd"
         },
@@ -960,7 +960,7 @@ window.movieData = {
             "year": "2008",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "114m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/niesamowity-hulk-2008-poster.webp",
             "URL": "https://bysesukior.com/e/dsei9hndtkgb"
         },
@@ -970,7 +970,7 @@ window.movieData = {
             "year": "2011",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "115m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/thor-2011-poster.webp",
             "URL": "https://bysesukior.com/e/9wprkfu1jc3s"
         },
@@ -980,7 +980,7 @@ window.movieData = {
             "year": "2012",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "143m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/avengers-2012-poster.webp",
             "URL": "https://bysesukior.com/e/5j313gdxvssw"
         },
@@ -990,7 +990,7 @@ window.movieData = {
             "year": "2013",
             "genre": "Akcja, Sci-Fi, Fantasy, Przygodowy",
             "duration": "112m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/thor-mroczny-swiat-poster.webp",
             "URL": "https://bysesukior.com/e/1afw73kik5az"
         },
@@ -1000,7 +1000,7 @@ window.movieData = {
             "year": "2013",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "130m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/iron-man-3-poster.webp",
             "URL": "https://bysesukior.com/e/ucizwpwo5ena"
         },
@@ -1010,7 +1010,7 @@ window.movieData = {
             "year": "2014",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "136m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/kapitan-ameryka-zimowy-zolnierz-poster.webp",
             "URL": "https://bysesukior.com/e/jwl008pjfnzo"
         },
@@ -1020,7 +1020,7 @@ window.movieData = {
             "year": "2014",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "122m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/straznicy-galaktyki-poster.webp",
             "URL": "https://bysesukior.com/e/gb8c3jmi3550"
         },
@@ -1030,7 +1030,7 @@ window.movieData = {
             "year": "2017",
             "genre": "Akcja, Sci-Fi",
             "duration": "137m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/straznicy-galaktyki-2-poster.webp",
             "URL": "https://bysesukior.com/e/kagicez83y22"
         },
@@ -1040,7 +1040,7 @@ window.movieData = {
             "year": "2015",
             "genre": "Akcja, Sci-Fi",
             "duration": "141m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/avengers-czas-ultrona-poster.webp",
             "URL": "https://bysesukior.com/e/04g06nrztzso"
         },
@@ -1050,7 +1050,7 @@ window.movieData = {
             "year": "2015",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "117m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/ant-man-poster.webp",
             "URL": "https://bysesukior.com/e/9j5zyc0vmuu9"
         },
@@ -1060,7 +1060,7 @@ window.movieData = {
             "year": "2016",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "147m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/kapitan-ameryka-wojna-bohaterow-poster.webp",
             "URL": "https://bysesukior.com/e/hqpz7gs1nw72"
         },
@@ -1070,7 +1070,7 @@ window.movieData = {
             "year": "2021",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "134m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://upload.wikimedia.org/wikipedia/en/e/e9/Black_Widow_%282021_film%29_poster.jpg",
             "URL": "https://bysesukior.com/e/109pz04qasw6"
         },
@@ -1080,7 +1080,7 @@ window.movieData = {
             "year": "2018",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "134m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/czarna-pantera-poster.webp",
             "URL": "https://bysesukior.com/e/i2lzlsaj5izu"
         },
@@ -1090,7 +1090,7 @@ window.movieData = {
             "year": "2017",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "133m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/spider-man-homecoming-poster.webp",
             "URL": "https://bysesukior.com/e/5y061urf077v"
         },
@@ -1100,7 +1100,7 @@ window.movieData = {
             "year": "2016",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "115m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/doktor-strange-poster.webp",
             "URL": "https://bysesukior.com/e/6im6wfzioj7l"
         },
@@ -1110,7 +1110,7 @@ window.movieData = {
             "year": "2017",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "130m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/thor-ragnarok-poster.webp",
             "URL": "https://bysesukior.com/e/ferx8zdg7505"
         },
@@ -1120,7 +1120,7 @@ window.movieData = {
             "year": "2018",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "118m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/ant-man-i-osa-poster.webp",
             "URL": "https://bysesukior.com/e/fdp980pktw7a"
         },
@@ -1129,7 +1129,7 @@ window.movieData = {
             "name": "Avengers: Wojna bez granic",
             "year": "2018",
             "genre": "Akcja / Sci-Fi / Przygodowy",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/avengers-wojna-bez-granic-poster.webp",
             "URL": "https://bysesukior.com/e/bq06bkm0zc3j"
         },
@@ -1139,7 +1139,7 @@ window.movieData = {
             "year": "2019",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "181m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/avengers-koniec-gry-poster.webp",
             "URL": "https://bysesukior.com/e/8znrrbrkcipa"
         },
@@ -1149,7 +1149,7 @@ window.movieData = {
             "year": "2021",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "132m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/shang-chi-i-legenda-dziesieciu-pierscieni-poster.webp",
             "URL": "https://bysesukior.com/e/mqvq0bjueido"
         },
@@ -1159,7 +1159,7 @@ window.movieData = {
             "year": "2019",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "129m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/spider-man-daleko-od-domu-poster.webp",
             "URL": "https://bysesukior.com/e/b7aheeiqsynr"
         },
@@ -1169,7 +1169,7 @@ window.movieData = {
             "year": "2021",
             "genre": "Sci-Fi, Akcja",
             "duration": "157m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/eternals-poster.webp",
             "URL": "https://bysesukior.com/e/dne6ukjmmztx"
         },
@@ -1179,7 +1179,7 @@ window.movieData = {
             "year": "2021",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "148m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/spider-man-bez-drogi-do-domu-poster.webp",
             "URL": "https://bysesukior.com/e/lrqawgyb743g"
         },
@@ -1189,7 +1189,7 @@ window.movieData = {
             "year": "2024",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "127m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/deadpool-and-wolverine-poster.webp",
             "URL": "https://bysesukior.com/e/xguxhoik09gk"
         },
@@ -1199,7 +1199,7 @@ window.movieData = {
             "year": "2022",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "126m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/doktor-strange-w-multiwersum-obledu-2022-poster.webp",
             "URL": "https://bysesukior.com/e/vxvnew12sytw"
         },
@@ -1209,7 +1209,7 @@ window.movieData = {
             "year": "2022",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "161m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/czarna-pantera-wakanda-w-moim-sercu-poster.webp",
             "URL": "https://bysesukior.com/e/xt11rpj6kcrr"
         },
@@ -1219,7 +1219,7 @@ window.movieData = {
             "year": "2022",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "130m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/thor-milosc-i-grom-poster.webp",
             "URL": "https://bysesukior.com/e/zhsuzgl7140z"
         },
@@ -1229,7 +1229,7 @@ window.movieData = {
             "year": "2023",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "127m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/ant-man-i-osa-kwantomania-poster.webp",
             "URL": "https://bysesukior.com/e/h6qjeonboxva"
         },
@@ -1239,7 +1239,7 @@ window.movieData = {
             "year": "2023",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "150m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/straznicy-galaktyki-volume-3-poster.webp",
             "URL": "https://bysesukior.com/e/jm5iqpoihr8i"
         },
@@ -1249,7 +1249,7 @@ window.movieData = {
             "year": "2023",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "104",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/marvels-poster.webp",
             "URL": "https://bysesukior.com/e/xtg4iskpv0k9"
         },
@@ -1259,7 +1259,7 @@ window.movieData = {
             "year": "2024",
             "genre": "Akcja / Sci-Fi / Przygodowy",
             "duration": "118m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/kapitan-ameryka-nowy-wspanialy-swiat-poster.webp",
             "URL": "https://bysesukior.com/e/f6rraspy7r7k"
         },
@@ -1269,7 +1269,7 @@ window.movieData = {
             "year": "2025",
             "genre": "Akcja, Sci-Fi, Superbohaterowie",
             "duration": "126m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/thunderbolts-poster.webp",
             "URL": "https://bysesukior.com/e/eck6hkwrdqvd"
         },
@@ -1279,19 +1279,19 @@ window.movieData = {
             "year": "2025",
             "genre": "Akcja, Sci-Fi",
             "duration": "140m",
-            "tags": ["disney"],
+            "tags": ["Disney+"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/fantastyczna-4-pierwsze-kroki-poster.webp",
             "URL": "https://bysesukior.com/e/3iodtrwtduxu"
         },
     },
-    "Sony Pictures / Columbia Pictures" : {
+    "SONY PICTURES ANIMATION" : {
         "Spider-Man Uniwersum" : {
             "type" : "Film",
             "name": "Spider-Man Uniwersum",
             "year": 2018,
             "genre": "Akcja, Sci-fi",
             "duration": "117m",
-            "tags": ["netflix"],
+            "tags": ["Netflix"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/spider-man-uniwersum-poster.webp",
             "URL": "https://bysesukior.com/e/c1vfm6e8533q"
         },
@@ -1301,7 +1301,7 @@ window.movieData = {
             "year": 2023,
             "genre": "Akcja, Sci-fi",
             "duration": "152m",
-            "tags": ["netflix"],
+            "tags": ["Netflix"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/spider-man-poprzez-multiwersum-2023-poster.webp",
             "URL": "https://bysesukior.com/e/qw9wu6odb34c"
         },
@@ -1313,7 +1313,7 @@ window.movieData = {
             "year" : "2018",
             "genre" : "akcja / sci‑fi / thriller",
             "duration" : "113m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/meg-poster.webp",
             "URL" : "https://bysesukior.com/e/edh3ka55nj0y",
         },
@@ -1323,7 +1323,7 @@ window.movieData = {
             "year" : "2023",
             "genre" : "akcja / sci‑fi / thriller",
             "duration" : "115m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/meg-2-glebia-poster.webp",
             "URL" : "https://bysesukior.com/e/h8kxndso1198",
         },
@@ -1333,7 +1333,7 @@ window.movieData = {
             "year" : "2025",
             "genre" : "Fantasy przygodowy",
             "duration" : "100m",
-            "tags": ["Prime Video"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/9fa0z_II_Pq_Kq_S5_YE_9xwe_WW_0x_Xt_R3_93ae0fe2fb.webp",
             "URL" : "https://bysesukior.com/e/urirysdmxb4f",
         },
@@ -1343,7 +1343,7 @@ window.movieData = {
             "year": 2001,
             "genre": "Fantasy Przygodowy",
             "duration": "152m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-kamien-filozoficzny-poster.webp",
             "URL": "https://bysesukior.com/e/g4be2870gcb3"
         },
@@ -1353,7 +1353,7 @@ window.movieData = {
             "year": 2002,
             "genre": "Fantasy Przygodowy",
             "duration": "161m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-komnata-tajemnic-poster.webp",
             "URL": "https://bysesukior.com/e/cl23vscsvwtp"
         },
@@ -1363,7 +1363,7 @@ window.movieData = {
             "year": 2004,
             "genre": "Fantasy Przygodowy",
             "duration": "142m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-wiezien-azkabanu-poster.webp",
             "URL": "https://bysesukior.com/e/ture8isgrbdd"
         },
@@ -1373,7 +1373,7 @@ window.movieData = {
             "year": 2005,
             "genre": "Fantasy Przygodowy",
             "duration": "157m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-czara-ognia-poster.webp",
             "URL": "https://bysesukior.com/e/32x1h4ej3k6q"
         },
@@ -1383,7 +1383,7 @@ window.movieData = {
             "year": 2007,
             "genre": "Fantasy Przygodowy",
             "duration": "138m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-zakon-feniksa-poster.webp",
             "URL": "https://bysesukior.com/e/46uss340ajna"
         },
@@ -1393,7 +1393,7 @@ window.movieData = {
             "year": 2009,
             "genre": "Fantasy Przygodowy",
             "duration": "153m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-ksiaze-polkrwi-poster.webp",
             "URL": "https://bysesukior.com/e/d11uaujl4h97"
         },
@@ -1403,7 +1403,7 @@ window.movieData = {
             "year": 2001,
             "genre": "Fantasy Przygodowy",
             "duration": "146m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-insygnia-smierci-czesc-i-poster.webp",
             "URL": "https://bysesukior.com/e/7wxe8fxst12s"
         },
@@ -1413,7 +1413,7 @@ window.movieData = {
             "year": 2011,
             "genre": "Fantasy Przygodowy",
             "duration": "130m",
-            "tags": ["WarnerBros"],
+            "tags": ["Max"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/harry-potter-i-insygnia-smierci-czesc-ii-poster.webp",
             "URL": "https://bysesukior.com/e/h30cazv7aj51"
         },
@@ -1425,7 +1425,7 @@ window.movieData = {
             "year": 2021,
             "duration" : "SERIAL",
             "genre": "Thriller survivalowy",
-            "tags" : ["netflix"],
+            "tags" : ["Netflix"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/squid-game.webp",
             "Season_1": {
                 "name": "Sezon 1",
@@ -1628,14 +1628,14 @@ window.movieData = {
             //"screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/stranger-things.webp",
         //}
     },
-    "Universal Pictures" : {
+    "BLUMHOUSE" : {
         "Pięć koszmarnych nocy" : {
             "type" : "Film",
             "name": "Pięć koszmarnych nocy",
             "year": 2023,
             "genre": "horror",
             "duration": "109m",
-            "tags" : ["netflix"],
+            "tags" : ["Netflix"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/piec-koszmarnych-nocy-poster.webp",
             "URL": "https://bysesukior.com/e/tl1uhiivrv9r"
         },
@@ -1645,7 +1645,7 @@ window.movieData = {
             "year": 2025,
             "genre": "horror",
             "duration": "104m",
-            "tags" : ["netflix"],
+            "tags" : ["Netflix"],
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/piec_koszmarnych_nocy_2_poster_40f7a04418.webp",
             "URL": "https://bysesukior.com/e/ot9gee70wru2"
         },
