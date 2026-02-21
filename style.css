@@ -202,3 +202,61 @@ body {
     border-color: #e50914;
     box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.25);
 }
+
+/* ===== PLATFORM BUTTONS ===== */
+.platform-buttons{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-left: 18px;
+}
+
+.platform-btn{
+    appearance: none;
+    border: 1px solid rgba(255,255,255,.12);
+    background: rgba(20,20,24,.65);
+    color: rgba(255,255,255,.92);
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: .2px;
+    cursor: pointer;
+    user-select: none;
+    transition: transform .12s ease, background .12s ease, border-color .12s ease, box-shadow .12s ease, color .12s ease;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.platform-btn:hover{
+    transform: translateY(-1px);
+    border-color: rgba(255,255,255,.22);
+    box-shadow: 0 10px 22px rgba(0,0,0,.35);
+}
+
+.platform-btn:active{
+    transform: translateY(0px) scale(.98);
+}
+
+.platform-btn.active{
+    background: linear-gradient(135deg, rgba(255,60,120,.95), rgba(90,120,255,.95));
+    border-color: rgba(255,255,255,.25);
+    color: white;
+    box-shadow: 0 14px 28px rgba(0,0,0,.45);
+}
+
+.platform-btn.all{
+    background: rgba(255,255,255,.08);
+}
+
+.platform-btn.all.active{
+    background: linear-gradient(135deg, rgba(0,220,150,.95), rgba(0,140,255,.95));
+}
+
+/* na małych ekranach żeby search nie uciekł */
+@media (max-width: 900px){
+    .platform-buttons{ width: 100%; margin: 10px 0 0 0; }
+    .top-panel{ flex-wrap: wrap; height: auto; padding-bottom: 14px; gap: 10px; }
+    .search-input{ margin-left: 0; width: 100%; }
+}

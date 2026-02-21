@@ -1,11 +1,74 @@
-/* 🔥 PALSKILEN CREATOR v3.3 + SEARCH v1.0 (sticky top + wyszukiwarka na home) 🔥 */
+/* 🔥 PALSKILEN CREATOR v3.3 + SEARCH v1.0 + PLATFORM FILTER v1.0 🔥 */
 
 const app = document.getElementById("app");
 const backBtn = document.getElementById("backBtn");
 const moviesData = window.movieData;
 const searchInput = document.getElementById("searchInput");
+const platformButtonsEl = document.getElementById("platformButtons");
 
 let viewStack = [];
+
+/* =========================
+   PLATFORM FILTER
+========================= */
+const PLATFORM_LIST = [
+    { tag: "netflix", label: "Netflix" },
+    { tag: "disney", label: "Disney" },
+    { tag: "HBO", label: "HBO" },
+    { tag: "Prime Video", label: "Prime Video" },
+    { tag: "SkyShowtime", label: "SkyShowtime" },
+    { tag: "Crunchyroll", label: "Crunchyroll" }
+];
+
+let activePlatformTag = "ALL";
+
+function buildPlatformButtons() {
+    if (!platformButtonsEl) return;
+
+    platformButtonsEl.innerHTML = "";
+
+    const tpl = document.createElement("button");
+    tpl.className = "platform-btn";
+    tpl.type = "button";
+
+    const allBtn = tpl.cloneNode(true);
+    allBtn.classList.add("all");
+    allBtn.dataset.tag = "ALL";
+    allBtn.textContent = "Wszystkie";
+    platformButtonsEl.appendChild(allBtn);
+
+    PLATFORM_LIST.forEach(({ tag, label }) => {
+        const b = tpl.cloneNode(true);
+        b.dataset.tag = tag;
+        b.textContent = label;
+        platformButtonsEl.appendChild(b);
+    });
+
+    const setActive = (tag) => {
+        activePlatformTag = tag || "ALL";
+        platformButtonsEl.querySelectorAll(".platform-btn").forEach((btn) => {
+            btn.classList.toggle("active", btn.dataset.tag === activePlatformTag);
+        });
+    };
+
+    platformButtonsEl.addEventListener("click", (e) => {
+        const btn = e.target.closest(".platform-btn");
+        if (!btn) return;
+
+        setActive(btn.dataset.tag);
+
+        // filtr działa tylko na HOME
+        if (isHomeView()) renderHomeWithFilter(searchInput?.value || "");
+    });
+
+    setActive("ALL");
+}
+
+function passesPlatformFilter(info) {
+    if (activePlatformTag === "ALL") return true;
+    const tags = Array.isArray(info.tags) ? info.tags : [];
+    return tags.includes(activePlatformTag);
+}
 
 /* =========================
    NAV
@@ -49,7 +112,7 @@ function calculateOptimalCardSize() {
         width: baseSize,
         margin: "5px",
         gap: `${gap}px`,
-        cols: Math.floor((containerWidth - 40) / (baseSize + gap + marginTotal)),
+        cols: Math.floor((containerWidth - 40) / (baseSize + gap + marginTotal))
     };
 }
 
@@ -194,7 +257,6 @@ function createSmartGrid(items) {
     const grid = document.createElement("div");
     grid.className = "palskilen-auto-grid"; // AUTO GRID CLASS
 
-    const optimal = calculateOptimalCardSize();
     grid.style.padding = "20px";
     grid.style.boxSizing = "border-box";
 
@@ -202,7 +264,7 @@ function createSmartGrid(items) {
     return grid;
 }
 
-console.log("🔥 PALSKILEN v3.3 + SEARCH v1.0 - AKTYWNY!");
+console.log("🔥 PALSKILEN v3.3 + SEARCH v1.0 + PLATFORM FILTER v1.0 - AKTYWNY!");
 console.log("📐 Rozmiar okna:", window.innerWidth, "→ Karty:", calculateOptimalCardSize());
 
 /* =========================
@@ -215,9 +277,13 @@ function buildHomeContainer(query = "") {
     Object.entries(moviesData).forEach(([studio, movies]) => {
         const list = Object.values(movies);
 
+        // 1) filtr platform
+        const platformFiltered = list.filter((info) => passesPlatformFilter(info));
+
+        // 2) filtr wyszukiwarki
         const filtered = query
-            ? list.filter((info) => matchesQuery(info.name, query))
-            : list;
+            ? platformFiltered.filter((info) => matchesQuery(info.name, query))
+            : platformFiltered;
 
         if (filtered.length === 0) return;
 
@@ -441,11 +507,7 @@ function createPlayerView(title, url, info) {
               }`
             : url;
 
-        if (
-            embedUrl.includes("bysesukior.com") ||
-            embedUrl.includes("youtube.com/embed") ||
-            embedUrl.includes("drive.google.com")
-        ) {
+        if (embedUrl.includes("bysesukior.com") || embedUrl.includes("youtube.com/embed") || embedUrl.includes("drive.google.com")) {
             const iframe = document.createElement("iframe");
             iframe.src = embedUrl;
             iframe.width = "100%";
@@ -493,4 +555,5 @@ function createPlayerView(title, url, info) {
 /* =========================
    START
 ========================= */
+buildPlatformButtons();
 showHome();
