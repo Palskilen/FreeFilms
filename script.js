@@ -14,10 +14,10 @@ let viewStack = [];
 const PLATFORM_LIST = [
     { tag: "netflix", label: "Netflix" },
     { tag: "disney", label: "Disney" },
-    { tag: "HBO", label: "HBO" },
     { tag: "Prime Video", label: "Prime Video" },
+    { tag: "WarnerBros", label: "WarnerBros" },
     { tag: "SkyShowtime", label: "SkyShowtime" },
-    { tag: "Crunchyroll", label: "Crunchyroll" }
+    { tag: "Crunchyroll", label: "Crunchyroll" },
 ];
 
 let activePlatformTag = "ALL";
