@@ -817,7 +817,7 @@ window.movieData = {
                     "URL": "https://bysesukior.com/e/lst2ohi6bbn9"
                 }
             },
-},
+        },
         "Dexter Resurrection": {
             "type": "Serial",
             "name": "Dexter Resurrection",
@@ -1285,6 +1285,26 @@ window.movieData = {
         },
     },
     "SONY PICTURES ANIMATION" : {
+        "Angry Birds: Film" : {
+            "type" : "Film",
+            "name": "Angry Birds: Film",
+            "year": 2016,
+            "genre": "Animacja / Komedia",
+            "duration": "97m",
+            "tags": ["Netflix"],
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/angry-birds-film-poster.webp",
+            "URL": "https://bysesukior.com/e/7lp0781oy5xd"
+        },
+        "Angry Birds 2 Film" : {
+            "type" : "Film",
+            "name": "Angry Birds 2 Film",
+            "year": 2019,
+            "genre": "Animacja / Komedia",
+            "duration": "96m",
+            "tags": ["Netflix"],
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/angry-birds-2-film-poster.webp",
+            "URL": "https://bysesukior.com/e/3wp1x1v87aa4"
+        },
         "Spider-Man Uniwersum" : {
             "type" : "Film",
             "name": "Spider-Man Uniwersum",
@@ -1305,6 +1325,92 @@ window.movieData = {
             "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/spider-man-poprzez-multiwersum-2023-poster.webp",
             "URL": "https://bysesukior.com/e/qw9wu6odb34c"
         },
+    },
+    "ILLUMINATION" : {
+        "Sing": {
+            "type": "Film",
+            "name": "Sing",
+            "year": 2016,
+            "genre": "Animacja / Muzyczny / Komedia",
+            "duration": "107m",
+            "tags" : ["Netflix"],
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/sing-poster.webp",
+            "URL": "https://bysesukior.com/e/ylzuzqhqa9pm"
+        },
+        "Sing 2" : {
+            "type" : "Film",
+            "name": "Sing 2",
+            "year": 2021,
+            "genre": "Animacja / Muzyczny / Komedia",
+            "duration": "109m",
+            "tags": ["Netflix"],
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/sing-2-poster.webp",
+            "URL": "https://bysesukior.com/e/scb31k8ju9su"
+        },
+    },
+    "PIXAR" : {
+        "Auta": {
+            "type": "Film",
+            "name": "Auta",
+            "year": 2006,
+            "genre": "Animacja / Przygodowy / Komedia / Familijny / Sportowy",
+            "duration": "116m",
+            "tags": ["Disney+"],
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/auta-poster.webp",
+            "URL": "https://bysesukior.com/e/4kjz44j78k8n"
+        },
+        "Auta 2": {
+            "type": "Film",
+            "name": "Auta 2",
+            "year": 2011,
+            "genre": "Animacja / Przygodowy / Komedia / Familijny",
+            "duration": "107m",
+            "tags": ["Disney+"],
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/auta-2-poster.webp",
+            "URL": "https://bysesukior.com/e/50uc0jtxnj17"
+        },
+        "Auta 3": {
+            "type": "Film",
+            "name": "Auta 3",
+            "year": 2017,
+            "genre": "Animacja / Przygodowy / Komedia / Familijny / Sportowy",
+            "duration": "102m",
+            "tags": ["Disney+"],
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/auta-3-poster.webp",
+            "URL": "https://bysesukior.com/e/2dhft1hasry3"
+        },
+        "Iniemamocni": {
+            "type": "Film",
+            "name": "Iniemamocni",
+            "year": 2004,
+            "genre": "Animacja / Akcja / Przygodowy / Familijny / Komedia",
+            "duration": "115m",
+            "tags": ["Disney+"],
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/iniemamocni-poster.webp",
+            "URL": "https://bysesukior.com/e/bvlhe9x3yt1r"
+        },
+        "Iniemamocni 2": {
+            "type": "Film",
+            "name": "Iniemamocni 2",
+            "year": 2018,
+            "genre": "Animacja / Akcja / Przygodowy / Familijny / Komedia",
+            "duration": "117m",
+            "tags": ["Disney+"],
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/iniemamocni-2-poster.webp",
+            "URL": "https://bysesukior.com/e/73ptfs7161yt"
+        }
+    },
+    "WALT DISNEY ANIMATION" : {
+        "Piorun": {
+            "type": "Film",
+            "name": "Piorun",
+            "year": 2008,
+            "genre": "Animacja / Przygodowy / Komedia / Familijny",
+            "duration": "96m",
+            "tags": ["Disney+"],
+            "screen": "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/piorun-poster.webp",
+            "URL": "https://bysesukior.com/e/e11d7sbml0d6"
+        }
     },
     "WARNER BROS" : {
         "Meg" : {
@@ -1419,6 +1525,16 @@ window.movieData = {
         },
     },
     "Netflix" : {
+        "Rekiny w Sekwanie" : {
+            "type" : "Film",
+            "name": "Rekiny w Sekwanie",
+            "year": 2024,
+            "genre": "Horror / Akcja / Thriller.",
+            "duration": "103m",
+            "tags": ["Netflix"],
+            "screen" : "https://bajeczki24.pl/images/v1/format=auto,quality=75,fit=cover,scq=50,w=300,h=450/rekiny-w-sekwanie-poster.webp",
+            "URL": "https://bysesukior.com/e/vfncz8oc0sn7"
+        },
         "Squid Game" : {
             "type" : "Serial",
             "name": "Squid Game",
@@ -1650,5 +1766,4 @@ window.movieData = {
             "URL": "https://bysesukior.com/e/ot9gee70wru2"
         },
     }
-};
-
+}
